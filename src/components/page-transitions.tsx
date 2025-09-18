@@ -35,8 +35,8 @@ export function PageTransition({ children, id, className = "" }: PageTransitionP
       id={id}
       className={className}
       initial={{ opacity: 0, y: 50 }}
-      animate={{ 
-        opacity: isVisible ? 1 : 0.7, 
+      animate={{
+        opacity: isVisible ? 1 : 0.7,
         y: isVisible ? 0 : 20,
         scale: isVisible ? 1 : 0.98
       }}
@@ -61,7 +61,7 @@ export function SmoothScroll({ targetId, children, offset = 80 }: SmoothScrollPr
     const target = document.getElementById(targetId);
     if (target) {
       const targetPosition = target.offsetTop - offset;
-      
+
       // Smooth scroll with easing
       const startPosition = window.pageYOffset;
       const distance = targetPosition - startPosition;
@@ -76,10 +76,10 @@ export function SmoothScroll({ targetId, children, offset = 80 }: SmoothScrollPr
         if (start === null) start = currentTime;
         const timeElapsed = currentTime - start;
         const progress = Math.min(timeElapsed / duration, 1);
-        
+
         const ease = easeInOutCubic(progress);
         window.scrollTo(0, startPosition + distance * ease);
-        
+
         if (progress < 1) {
           requestAnimationFrame(animation);
         }
@@ -116,3 +116,5 @@ export function SectionDivider() {
     </motion.div>
   );
 }
+
+

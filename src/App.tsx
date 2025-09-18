@@ -13,6 +13,8 @@ import { BlogSection } from './components/blog-section';
 import { FloatingCard, MagneticButton, GlowEffect, TiltCard } from './components/hover-animations';
 import { CursorParticles } from './components/cursor-particles';
 import { PageTransition, SmoothScroll, SectionDivider } from './components/page-transitions';
+import AnimatedBox from './components/animated-box';
+import SkillTypeAnime from './components/skillType-anime';
 
 function PortfolioContent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -122,7 +124,7 @@ function PortfolioContent() {
       <CursorParticles />
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/75 backdrop-blur-md border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div>
@@ -315,9 +317,11 @@ function PortfolioContent() {
               <h3 className="mb-6 text-center">Technologies I Work With</h3>
               <StaggerAnimation className="flex flex-wrap gap-3 justify-center">
                 {skills.map((skill) => (
-                  <Badge key={skill} variant="secondary" className="px-4 py-2 text-sm hover:scale-105 transition-transform cursor-default">
-                    {skill}
-                  </Badge>
+                  <AnimatedBox>
+                    <Badge key={skill} variant="secondary" className="px-4 py-2 text-sm hover:scale-105 transition-transform cursor-default">
+                      {skill}
+                    </Badge>
+                  </AnimatedBox>
                 ))}
               </StaggerAnimation>
             </ScrollAnimation>
@@ -334,16 +338,18 @@ function PortfolioContent() {
 
             <StaggerAnimation className="grid md:grid-cols-2 gap-6 mt-12" staggerDelay={0.15}>
               <FloatingCard intensity="medium">
-                <Card className="h-full">
-                  <CardHeader>
-                    <CardTitle className="text-center">Frontend</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-center text-muted-foreground">
-                      Creating engaging user interfaces with modern frameworks and responsive design principles.
-                    </p>
-                  </CardContent>
-                </Card>
+                <SkillTypeAnime>
+                  <Card className="h-full">
+                    <CardHeader>
+                      <CardTitle className="text-center">Frontend</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-center text-muted-foreground">
+                        Specializing in dynamic and responsive frontend development. I use modern tools to turn complex ideas into elegant, user-friendly digital experiences.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </SkillTypeAnime>
               </FloatingCard>
 
               <FloatingCard intensity="medium">
@@ -353,7 +359,7 @@ function PortfolioContent() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-center text-muted-foreground">
-                      Building robust APIs and server-side applications with scalable architecture.
+                      Expanding my full-stack capabilities by building efficient RESTful APIs. I'm committed to bridging the gap between frontend and backend, ensuring smooth communication and functionality.
                     </p>
                   </CardContent>
                 </Card>

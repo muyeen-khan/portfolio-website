@@ -1,0 +1,132 @@
+/* ✅ Dark Mode (keep your original styles untouched) */
+.animated {
+  position: relative;
+  border-radius: 8px;
+  padding: 0px;
+  background-color: #0d0d0d;
+}
+
+.animated::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  z-index: -1;
+  background-color: #ffffff;
+  animation: glow-pulse 5s infinite ease-in-out;
+}
+
+@keyframes glow-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+    box-shadow: 0 0 4px #ffffff, inset 0 0 4px #ffffff;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+    box-shadow: 0 0 12px #ffffff, inset 0 0 12px #ffffff;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+    box-shadow: 0 0 4px #ffffff, inset 0 0 4px #ffffff;
+  }
+}
+
+/* 🌞 Light Mode (Tailwind `darkMode: 'class'`) */
+:root:not(.dark) .animated {
+  background-color: #fdfdfd;
+}
+
+:root:not(.dark) .animated::before {
+  background: linear-gradient(135deg, #1e90ff, #cc02f5, #ff4500);
+  animation: gradient-pulse 4s infinite ease-in-out;
+}
+
+@keyframes gradient-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+    filter: blur(2px);
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+    filter: blur(4px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+    filter: blur(2px);
+  }
+}
+
+
+
+
+/* animtation css for frontend backend card */
+
+/* .skillType {
+  position: relative;
+  border-radius: 14px;
+  /* overflow: hidden; 
+}
+
+.skillType::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: conic-gradient(
+    from 0deg,
+    #ff00cc,
+    #3333ff,
+    #00ff99,
+    #ffcc00,
+    #ff00cc
+  );
+  animation: animateGradient 8s linear infinite alternate;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+@keyframes animateGradient {
+  0% {
+    background: conic-gradient(
+      from 0deg,
+      #ff00cc,
+      #3333ff,
+      #00ff99,
+      #ffcc00,
+      #ff00cc
+    );
+  }
+  50% {
+    background: conic-gradient(
+      from 180deg,
+      #ff00cc,
+      #3333ff,
+      #00ff99,
+      #ffcc00,
+      #ff00cc
+    );
+  }
+  100% {
+    background: conic-gradient(
+      from 360deg,
+      #ff00cc,
+      #3333ff,
+      #00ff99,
+      #ffcc00,
+      #ff00cc
+    );
+  }
+}
+
+.skillType > * {
+  position: relative;
+  z-index: 1;
+} */
